@@ -4,6 +4,7 @@
 
 import esprima
 
+from checkers.empty_lines import check_for_empty_lines
 from checkers.missing_semicolons import check_for_missing_semicolons
 from self_types.js_code import JsCode, JsCodeError, JsCodeWarning
 
@@ -30,6 +31,7 @@ class SimpleJSLinter:
         Args:
             **kwargs: Keyword arguments to specify which specific checks to run.
                       Pass 'missing_semicolons=True' to check for missing semicolons.
+                      Pass 'empty_lines=True' to checking empty lines.
                       Pass 'all=True' to run all available checks.
         """
 
@@ -37,6 +39,8 @@ class SimpleJSLinter:
             check_all = kwargs.get("all", False)
             if check_all or kwargs.get("missing_semicolons"):
                 self.warnings.extend(check_for_missing_semicolons(self.js_code))
+            if check_all or kwargs.get("empty_lines"):
+                self.warnings.extend(check_for_empty_lines(self.js_code))
         except esprima.Error as e:
             print(f"Parsing error: {e.message}")
 

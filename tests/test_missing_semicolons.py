@@ -38,11 +38,8 @@ class CheckMissingSemicolons(unittest.TestCase):
         self.assertEqual(str(errors[0]), 'Warning: no_filename line 1: Missing semicolon')
 
 
-def test_not_missing_semicolons_with_line_break_in_expression(self):
+    def test_not_missing_semicolons_with_line_break_in_expression(self):
         js_code = JsCode("let result = 10 +\n 20;")
         errors = check_for_missing_semicolons(js_code)
         self.assertEqual(len(errors), 0)
 
-
-if __name__ == '__main__':
-    unittest.main()
