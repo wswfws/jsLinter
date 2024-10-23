@@ -23,20 +23,32 @@ class SimpleJSLinter:
         self.errors: list[JsCodeError] = []
         self.warnings: list[JsCodeWarning] = []
 
-    def lint(self):
-        """Lints the JavaScript code for errors."""
+    def lint(self, **kwargs):
+        """
+        Lints the JavaScript code for errors.
+
+        Args:
+            **kwargs: Keyword arguments to specify which specific checks to run.
+                      Pass 'missing_semicolons=True' to check for missing semicolons.
+                      Pass 'all=True' to run all available checks.
+        """
+
         try:
-            self.warnings.extend(check_for_missing_semicolons(self.js_code))
+            check_all = kwargs.get("all", False)
+            if check_all or kwargs.get("missing_semicolons"):
+                self.warnings.extend(check_for_missing_semicolons(self.js_code))
         except esprima.Error as e:
             print(f"Parsing error: {e.message}")
 
     def report(self):
         """Reports the linting errors and warnings found in the JavaScript code."""
-        if not self.errors:
+        if not self.errors and not self.warnings:
             print("No linting errors found!")
         else:
             for error in self.errors:
                 print(error)
+            for warning in self.warnings:
+                print(warning)
 
 
 # Пример использования:
@@ -51,5 +63,5 @@ console.log(a)
 code1 = JsCode(SIMPLE_CODE)
 
 linter = SimpleJSLinter(code1)
-linter.lint()
+linter.lint(all=True)
 linter.report()
