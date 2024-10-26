@@ -1,0 +1,3 @@
+max-code-line-without-empty-lines: 9
+checkers:
+  all: True

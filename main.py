@@ -3,9 +3,11 @@
 """
 
 import esprima
+from yaml import load as load_yaml, FullLoader
 
 from checkers.empty_lines import check_for_empty_lines
 from checkers.missing_semicolons import check_for_missing_semicolons
+from config import CONFIG_PATH, CONFIG_ENCODING
 from self_types.js_code import JsCode, JsCodeError, JsCodeWarning
 
 
@@ -35,12 +37,17 @@ class SimpleJSLinter:
                       Pass 'all=True' to run all available checks.
         """
 
+        checkers = kwargs.get('checkers', {})
+
         try:
-            check_all = kwargs.get("all", False)
-            if check_all or kwargs.get("missing_semicolons"):
+            check_all = checkers.get("all", False)
+            if check_all or checkers.get("missing_semicolons"):
                 self.warnings.extend(check_for_missing_semicolons(self.js_code))
-            if check_all or kwargs.get("empty_lines"):
-                self.warnings.extend(check_for_empty_lines(self.js_code))
+            if check_all or checkers.get("empty_lines"):
+                self.warnings.extend(check_for_empty_lines(
+                    self.js_code,
+                    kwargs.get("max_code_lines_without_empty_line", 9)
+                ))
         except esprima.Error as e:
             print(f"Parsing error: {e.message}")
 
@@ -61,11 +68,11 @@ let a = 5
 console.log(a)
 """
 
-# with open("test1.js", "r") as f:
-#     simple_code = f.read()
+with open(CONFIG_PATH, 'r', encoding=CONFIG_ENCODING) as f:
+    config = load_yaml(f, Loader=FullLoader)
 
 code1 = JsCode(SIMPLE_CODE)
 
 linter = SimpleJSLinter(code1)
-linter.lint(all=True)
+linter.lint(**config)
 linter.report()
