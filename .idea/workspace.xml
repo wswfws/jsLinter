@@ -4,11 +4,10 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc128b5-0f42-4d9b-b41b-ac9bb230a980" name="Changes" comment="add check_for_empty_lines">
-      <change afterPath="$PROJECT_DIR$/config.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
+    <list default="true" id="ecc128b5-0f42-4d9b-b41b-ac9bb230a980" name="Changes" comment="start add check_spaces_style">
+      <change afterPath="$PROJECT_DIR$/checkers/spaces_style.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/checkers/empty_lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/empty_lines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -81,7 +80,7 @@
       <recent name="C:\Users\gelli\PycharmProjects\jsLinter" />
     </key>
   </component>
-  <component name="RunManager" selected="Python tests.Python tests in tests">
+  <component name="RunManager" selected="Python.main">
     <configuration name="main" type="PythonConfigurationType" factoryName="Python" nameIsGenerated="true">
       <module name="jsLinter" />
       <option name="ENV_FILES" value="" />
@@ -197,8 +196,8 @@
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons" />
       <item itemvalue="Python tests.Python tests for test_empty_lines.CheckEmptyLines" />
+      <item itemvalue="Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons" />
       <item itemvalue="Python tests.Python tests in test_empty_lines.py" />
       <item itemvalue="Python tests.Python tests in tests" />
       <item itemvalue="Python tests.Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines" />
@@ -206,8 +205,8 @@
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests in tests" />
-        <item itemvalue="Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons" />
         <item itemvalue="Python tests.Python tests in test_empty_lines.py" />
+        <item itemvalue="Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons" />
         <item itemvalue="Python tests.Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines" />
         <item itemvalue="Python tests.Python tests for test_empty_lines.CheckEmptyLines" />
       </list>
@@ -232,7 +231,8 @@
       <workItem from="1729591396147" duration="26000" />
       <workItem from="1729613835625" duration="2897000" />
       <workItem from="1729682397353" duration="14551000" />
-      <workItem from="1729921281800" duration="1496000" />
+      <workItem from="1729921281800" duration="9078000" />
+      <workItem from="1730195112878" duration="17000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -282,7 +282,15 @@
       <option name="project" value="LOCAL" />
       <updated>1729695882931</updated>
     </task>
-    <option name="localTasksCounter" value="7" />
+    <task id="LOCAL-00007" summary="add config">
+      <option name="closed" value="true" />
+      <created>1729923706006</created>
+      <option name="number" value="00007" />
+      <option name="presentableId" value="LOCAL-00007" />
+      <option name="project" value="LOCAL" />
+      <updated>1729923706006</updated>
+    </task>
+    <option name="localTasksCounter" value="8" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -295,11 +303,13 @@
     <MESSAGE value="add icon" />
     <MESSAGE value="add siple config" />
     <MESSAGE value="add check_for_empty_lines" />
-    <option name="LAST_COMMIT_MESSAGE" value="add check_for_empty_lines" />
+    <MESSAGE value="add config" />
+    <MESSAGE value="start add check_spaces_style" />
+    <option name="LAST_COMMIT_MESSAGE" value="start add check_spaces_style" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/jsLinter$Unittests_for_test_empty_lines_CheckEmptyLines_test_many_code_without_empty_lines.coverage" NAME="Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines Coverage Results" MODIFIED="1729695143502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/jsLinter$.coverage" NAME=" Coverage Results" MODIFIED="1729695663117" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/jsLinter$main.coverage" NAME="main Coverage Results" MODIFIED="1729687708146" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/jsLinter$.coverage" NAME=" Coverage Results" MODIFIED="1729923565691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/jsLinter$main.coverage" NAME="main Coverage Results" MODIFIED="1729929407439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

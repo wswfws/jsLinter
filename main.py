@@ -7,6 +7,7 @@ from yaml import load as load_yaml, FullLoader
 
 from checkers.empty_lines import check_for_empty_lines
 from checkers.missing_semicolons import check_for_missing_semicolons
+from checkers.spaces_style import check_spaces_style
 from config import CONFIG_PATH, CONFIG_ENCODING
 from self_types.js_code import JsCode, JsCodeError, JsCodeWarning
 
@@ -46,7 +47,12 @@ class SimpleJSLinter:
             if check_all or checkers.get("empty_lines"):
                 self.warnings.extend(check_for_empty_lines(
                     self.js_code,
-                    kwargs.get("max_code_lines_without_empty_line", 9)
+                    kwargs.get("max-code-line-without-empty-lines", 9)
+                ))
+            if check_all or checkers.get("spaces_style"):
+                self.warnings.extend(check_spaces_style(
+                    self.js_code,
+                    kwargs.get("spaces-style", {})
                 ))
         except esprima.Error as e:
             print(f"Parsing error: {e.message}")
@@ -65,7 +71,8 @@ class SimpleJSLinter:
 # Пример использования:
 SIMPLE_CODE = """
 let a = 5
-console.log(a)
+console.log(a )
+console.log(a) ; 
 """
 
 with open(CONFIG_PATH, 'r', encoding=CONFIG_ENCODING) as f:
