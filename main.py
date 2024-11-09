@@ -56,7 +56,10 @@ class SimpleJSLinter:
                     kwargs.get("spaces-style", {})
                 ))
             if check_all or checkers.get("correct_naming"):
-                self.warnings.extend(check_for_correct_naming(self.js_code))
+                self.warnings.extend(check_for_correct_naming(
+                    self.js_code,
+                    kwargs.get("naming-patterns", {})
+                ))
         except esprima.Error as e:
             print(f"Parsing error: {e.message}")
 
@@ -69,8 +72,6 @@ class SimpleJSLinter:
                 print(error)
             for warning in self.warnings:
                 print(warning)
-
-
 
 
 with open(CONFIG_PATH, 'r', encoding=CONFIG_ENCODING) as f:

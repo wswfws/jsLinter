@@ -1,10 +1,16 @@
 max-code-line-without-empty-lines: 9
 checkers:
   all: True
-  missing_semicolons: False
+  missing-semicolons: False
 
 spaces-style:
   before: [ '+', '-', '=', '*', '/', '%', '&', '|', '^', '<<', '>>', '>>>', '**', '&&', '||', '?', '==', '!=', '===', '!==', '<', '<=', '>', '>=', 'instanceof', 'in' ]
   no-before: [ ')', ']', ',', ';', '.' ]
   after: [ '+', '=', '*', '/', '%', '&', '|', '^', '<<', '>>', '>>>', '**', '&&', '||', '?', ':', '==', '!=', '===', '!==', '<', '<=', '>', '>=', 'instanceof', 'in' ]
   no-after: [ '(', '[', ';', '.' ]
+
+naming-patterns:
+  js-variable-pattern: "[a-z][A-Za-z-]*"
+  js-const-variable-pattern: "[A-Z][A-Z-]*"
+  js-function-pattern: "[a-z][A-Za-z-]*"
+  js-class-pattern: "[A-Z][A-Za-z]*"

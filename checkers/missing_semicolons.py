@@ -13,6 +13,8 @@ warnings = check_for_missing_semicolons(code)
 for warning in warnings:
     print(warning)
 """
+from contextlib import suppress
+
 from public_props import get_public_props
 from self_types.js_code import JsCode, JsCodeWarning
 
@@ -32,11 +34,9 @@ def check_for_missing_semicolons(js_code: JsCode) -> list[JsCodeWarning]:
         for node in body:
             skip = False
             for inside in get_public_props(node):
-                try:
+                with suppress(AttributeError, TypeError):
                     check(getattr(node, inside).body)
                     skip = True
-                except:
-                    pass
             if skip:
                 continue
             if node.loc.end.column != len(js_code.line_code[node.loc.end.line - 1]):
