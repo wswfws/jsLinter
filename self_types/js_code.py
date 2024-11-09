@@ -21,6 +21,7 @@ class JsCode:
         line_code: List of code lines.
         errors: List to store errors found during analysis.
         parsed_code: Parsed code using esprima library.
+        tokenize_code: Tokenize code using esprima library.
         filename: Name of the file associated with the code.
     """
 
@@ -31,6 +32,7 @@ class JsCode:
         self.line_code = self.code.split("\n")
         self.errors = []
         self.parsed_code = esprima.parseScript(self.code, tolerant=True, loc=True)
+        self.tokenize_code = esprima.tokenize(self.code, tolerant=True, loc=True)
 
 
 class JsCodeError(Exception):
