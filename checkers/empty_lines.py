@@ -49,7 +49,7 @@ def check_for_empty_lines(js_code: JsCode, max_code_lines_without_empty_line: in
             warning_lines.append(0)
 
         for idx in range(1, len(is_empty_arr) - max_code_lines_without_empty_line):
-            window_sum += is_empty_arr[idx] - is_empty_arr[idx + max_code_lines_without_empty_line]
+            window_sum -= is_empty_arr[idx] + is_empty_arr[idx + max_code_lines_without_empty_line]
             if window_sum >= max_code_lines_without_empty_line:
                 warning_lines.append(idx)
 

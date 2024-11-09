@@ -19,14 +19,14 @@ class CheckMissingSemicolons(unittest.TestCase):
         self.assertEqual(len(errors), 0)
 
     def test_missing_semicolon_in_function(self):
-        js_code = JsCode("function foo() { return 42 }")
+        js_code = JsCode("function foo() {\n return 42\n }")
         errors = check_for_missing_semicolons(js_code)
         self.assertEqual(len(errors), 1)
-        self.assertEqual(errors[0].lineno, 1)
-        self.assertEqual(str(errors[0]), 'Warning: no_filename line 1: Missing semicolon')
+        self.assertEqual(errors[0].lineno, 2)
+        self.assertEqual(str(errors[0]), 'Warning: no_filename line 2: Missing semicolon')
 
     def test_not_missing_semicolon_in_function(self):
-        js_code = JsCode("function foo() { return 42; }")
+        js_code = JsCode("function foo() {\n return 42;\n }")
         errors = check_for_missing_semicolons(js_code)
         self.assertEqual(len(errors), 0)
 

@@ -5,6 +5,7 @@
 import esprima
 from yaml import load as load_yaml, FullLoader
 
+from checkers.correct_naming import check_for_correct_naming
 from checkers.empty_lines import check_for_empty_lines
 from checkers.missing_semicolons import check_for_missing_semicolons
 from checkers.spaces_style import check_spaces_style
@@ -54,6 +55,8 @@ class SimpleJSLinter:
                     self.js_code,
                     kwargs.get("spaces-style", {})
                 ))
+            if check_all or checkers.get("correct_naming"):
+                self.warnings.extend(check_for_correct_naming(self.js_code))
         except esprima.Error as e:
             print(f"Parsing error: {e.message}")
 
@@ -68,17 +71,13 @@ class SimpleJSLinter:
                 print(warning)
 
 
-# Пример использования:
-SIMPLE_CODE = """
-let a = 5
-console.log(a )
-console.log(a) ; 
-"""
+
 
 with open(CONFIG_PATH, 'r', encoding=CONFIG_ENCODING) as f:
     config = load_yaml(f, Loader=FullLoader)
 
-code1 = JsCode(SIMPLE_CODE)
+with open("test1.js", 'r', encoding=CONFIG_ENCODING) as f:
+    code1 = JsCode(f.read())
 
 linter = SimpleJSLinter(code1)
 linter.lint(**config)

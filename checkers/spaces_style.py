@@ -23,6 +23,7 @@ warnings = check_spaces_style(code, config)
 for warning in warnings:
     print(warning)
 """
+NEUTRAL_SYMBOLS = "!\"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~ \t\n\r\x0b\x0c"
 
 from self_types.js_code import JsCode, JsCodeWarning
 

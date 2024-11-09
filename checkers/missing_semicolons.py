@@ -13,7 +13,7 @@ warnings = check_for_missing_semicolons(code)
 for warning in warnings:
     print(warning)
 """
-
+from public_props import get_public_props
 from self_types.js_code import JsCode, JsCodeWarning
 
 
@@ -30,12 +30,18 @@ def check_for_missing_semicolons(js_code: JsCode) -> list[JsCodeWarning]:
 
     def check(body):
         for node in body:
-            if node.type == "FunctionDeclaration":
-                check(node.body.body)
+            skip = False
+            for inside in get_public_props(node):
+                try:
+                    check(getattr(node, inside).body)
+                    skip = True
+                except:
+                    pass
+            if skip:
                 continue
-            if node.type in ('IfStatement', 'ForStatement', 'WhileStatement'):
+            if node.loc.end.column != len(js_code.line_code[node.loc.end.line - 1]):
                 continue
-            last_symbol = js_code.line_code[node.loc.end.line - 1][node.loc.end.column - 1]
+            last_symbol = js_code.line_code[node.loc.end.line - 1][-1]
             if last_symbol != ";":
                 errors.append(JsCodeWarning("Missing semicolon", js_code.filename, node.loc.start.line))
 

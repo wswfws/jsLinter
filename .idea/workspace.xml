@@ -4,17 +4,23 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc128b5-0f42-4d9b-b41b-ac9bb230a980" name="Changes" comment="start add check_spaces_style">
-      <change afterPath="$PROJECT_DIR$/checkers/spaces_style.py" afterDir="false" />
+    <list default="true" id="ecc128b5-0f42-4d9b-b41b-ac9bb230a980" name="Changes" comment="fix node.type">
+      <change afterPath="$PROJECT_DIR$/checkers/correct_naming.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkers/empty_lines.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/empty_lines.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkers/missing_semicolons.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/missing_semicolons.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/checkers/spaces_style.py" beforeDir="false" afterPath="$PROJECT_DIR$/checkers/spaces_style.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/config.yml" beforeDir="false" afterPath="$PROJECT_DIR$/config.yml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/test1.js" beforeDir="false" afterPath="$PROJECT_DIR$/test1.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/tests/test_missing_semicolons.py" beforeDir="false" afterPath="$PROJECT_DIR$/tests/test_missing_semicolons.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
+  <component name="ExportTestResults" exportFormat="Xml" outputFolder="$PROJECT_DIR$" openResultsInEditor="true" userTempatePath="" />
   <component name="FileTemplateManagerImpl">
     <option name="RECENT_TEMPLATES">
       <list>
@@ -49,31 +55,41 @@
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent">{
-  &quot;keyToString&quot;: {
-    &quot;Python tests.Python tests for test_empty_lines.CheckEmptyLines.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_empty_lines.CheckEmptyLines.test_empty_lines_present.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_empty_lines.CheckEmptyLines.test_mixed_code_with_empty_lines.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolon_simple.executor&quot;: &quot;Debug&quot;,
-    &quot;Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolons_with_line_break_in_expression.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_empty_lines.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in test_missing_semicolons.py.executor&quot;: &quot;Run&quot;,
-    &quot;Python tests.Python tests in tests.executor&quot;: &quot;Coverage&quot;,
-    &quot;Python tests.Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines.executor&quot;: &quot;Debug&quot;,
-    &quot;Python.main.executor&quot;: &quot;Run&quot;,
-    &quot;RunOnceActivity.ShowReadmeOnStart&quot;: &quot;true&quot;,
-    &quot;git-widget-placeholder&quot;: &quot;master&quot;,
-    &quot;last_opened_file_path&quot;: &quot;C:/Users/gelli/PycharmProjects/jsLinter/self_types&quot;,
-    &quot;node.js.detected.package.eslint&quot;: &quot;true&quot;,
-    &quot;node.js.detected.package.tslint&quot;: &quot;true&quot;,
-    &quot;node.js.selected.package.eslint&quot;: &quot;(autodetect)&quot;,
-    &quot;node.js.selected.package.tslint&quot;: &quot;(autodetect)&quot;,
-    &quot;nodejs_package_manager_path&quot;: &quot;npm&quot;,
-    &quot;settings.editor.selected.configurable&quot;: &quot;debugger.dataViews.python.type.renderers&quot;,
-    &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "Python tests.Python tests for test_empty_lines.CheckEmptyLines.executor": "Run",
+    "Python tests.Python tests for test_empty_lines.CheckEmptyLines.test_empty_lines_present.executor": "Run",
+    "Python tests.Python tests for test_empty_lines.CheckEmptyLines.test_mixed_code_with_empty_lines.executor": "Run",
+    "Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.executor": "Run",
+    "Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolon_simple.executor": "Debug",
+    "Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolons_with_line_break_in_expression.executor": "Run",
+    "Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.test_not_missing_semicolon_in_function.executor": "Debug",
+    "Python tests.Python tests for еуые_spaces_style.TestCheckSpacesStyle.executor": "Run",
+    "Python tests.Python tests for еуые_spaces_style.TestCheckSpacesStyle.test_missing_space_after_operator.executor": "Run",
+    "Python tests.Python tests for еуые_spaces_style.TestCheckSpacesStyle.test_multiple_issues_in_one_line.executor": "Run",
+    "Python tests.Python tests for еуые_spaces_style.TestCheckSpacesStyle.test_unnecessary_space_before_operator.executor": "Run",
+    "Python tests.Python tests in test_empty_lines.py.executor": "Run",
+    "Python tests.Python tests in test_missing_semicolons.py.executor": "Run",
+    "Python tests.Python tests in test_spaces_style.py.executor": "Run",
+    "Python tests.Python tests in tests.executor": "Run",
+    "Python tests.Python tests in еуые_spaces_style.py.executor": "Run",
+    "Python tests.Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines.executor": "Debug",
+    "Python tests.Unittests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolon_in_function.executor": "Run",
+    "Python tests.Unittests for еуые_spaces_style.TestCheckSpacesStyle.test_missing_space_before_operator.executor": "Run",
+    "Python.main.executor": "Debug",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "master",
+    "last_opened_file_path": "C:/Users/gelli/PycharmProjects/jsLinter/self_types",
+    "node.js.detected.package.eslint": "true",
+    "node.js.detected.package.tslint": "true",
+    "node.js.selected.package.eslint": "(autodetect)",
+    "node.js.selected.package.tslint": "(autodetect)",
+    "nodejs_package_manager_path": "npm",
+    "settings.editor.selected.configurable": "debugger.dataViews.python.type.renderers",
+    "ts.external.directory.path": "C:\\Users\\gelli\\AppData\\Local\\Programs\\PyCharm Professional\\plugins\\javascript-plugin\\jsLanguageServicesImpl\\external",
+    "vue.rearranger.settings.migration": "true"
   }
-}</component>
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\gelli\PycharmProjects\jsLinter\self_types" />
@@ -104,7 +120,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_empty_lines.CheckEmptyLines" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_missing_semicolons.CheckMissingSemicolons.test_not_missing_semicolon_in_function" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="jsLinter" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -116,11 +132,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_empty_lines.CheckEmptyLines&quot;" />
+      <option name="_new_target" value="&quot;test_missing_semicolons.CheckMissingSemicolons.test_not_missing_semicolon_in_function&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests for test_missing_semicolons.CheckMissingSemicolons" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests for test_spaces_style.TestCheckSpacesStyle" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="jsLinter" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -132,11 +148,11 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_missing_semicolons.CheckMissingSemicolons&quot;" />
+      <option name="_new_target" value="&quot;test_spaces_style.TestCheckSpacesStyle&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Python tests in test_empty_lines.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
+    <configuration name="Python tests in test_spaces_style.py" type="tests" factoryName="Autodetect" temporary="true" nameIsGenerated="true">
       <module name="jsLinter" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -148,7 +164,7 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_empty_lines.py&quot;" />
+      <option name="_new_target" value="&quot;$PROJECT_DIR$/tests/test_spaces_style.py&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
@@ -163,22 +179,12 @@
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <EXTENSION ID="net.ashald.envfile">
-        <option name="IS_ENABLED" value="false" />
-        <option name="IS_SUBST" value="false" />
-        <option name="IS_PATH_MACRO_SUPPORTED" value="false" />
-        <option name="IS_IGNORE_MISSING_FILES" value="false" />
-        <option name="IS_ENABLE_EXPERIMENTAL_INTEGRATIONS" value="false" />
-        <ENTRIES>
-          <ENTRY IS_ENABLED="true" PARSER="runconfig" IS_EXECUTABLE="false" />
-        </ENTRIES>
-      </EXTENSION>
       <option name="_new_additionalArguments" value="&quot;&quot;" />
       <option name="_new_target" value="&quot;$PROJECT_DIR$/tests&quot;" />
       <option name="_new_targetType" value="&quot;PATH&quot;" />
       <method v="2" />
     </configuration>
-    <configuration name="Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
+    <configuration name="Unittests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolon_in_function" type="tests" factoryName="Unittests" temporary="true" nameIsGenerated="true">
       <module name="jsLinter" />
       <option name="ENV_FILES" value="" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -190,33 +196,33 @@
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
       <option name="_new_additionalArguments" value="&quot;&quot;" />
-      <option name="_new_target" value="&quot;test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines&quot;" />
+      <option name="_new_target" value="&quot;test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolon_in_function&quot;" />
       <option name="_new_targetType" value="&quot;PYTHON&quot;" />
       <method v="2" />
     </configuration>
     <list>
       <item itemvalue="Python.main" />
-      <item itemvalue="Python tests.Python tests for test_empty_lines.CheckEmptyLines" />
-      <item itemvalue="Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons" />
-      <item itemvalue="Python tests.Python tests in test_empty_lines.py" />
+      <item itemvalue="Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.test_not_missing_semicolon_in_function" />
+      <item itemvalue="Python tests.Python tests for test_spaces_style.TestCheckSpacesStyle" />
+      <item itemvalue="Python tests.Python tests in test_spaces_style.py" />
+      <item itemvalue="Python tests.Unittests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolon_in_function" />
       <item itemvalue="Python tests.Python tests in tests" />
-      <item itemvalue="Python tests.Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines" />
     </list>
     <recent_temporary>
       <list>
         <item itemvalue="Python tests.Python tests in tests" />
-        <item itemvalue="Python tests.Python tests in test_empty_lines.py" />
-        <item itemvalue="Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons" />
-        <item itemvalue="Python tests.Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines" />
-        <item itemvalue="Python tests.Python tests for test_empty_lines.CheckEmptyLines" />
+        <item itemvalue="Python tests.Unittests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolon_in_function" />
+        <item itemvalue="Python tests.Python tests for test_missing_semicolons.CheckMissingSemicolons.test_not_missing_semicolon_in_function" />
+        <item itemvalue="Python tests.Python tests in test_spaces_style.py" />
+        <item itemvalue="Python tests.Python tests for test_spaces_style.TestCheckSpacesStyle" />
       </list>
     </recent_temporary>
   </component>
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23339.19" />
-        <option value="bundled-python-sdk-0029f7779945-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23339.19" />
+        <option value="bundled-js-predefined-d6986cc7102b-5c90d61e3bab-JavaScript-PY-242.23726.102" />
+        <option value="bundled-python-sdk-5e1850174b45-399fe30bd8c1-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-242.23726.102" />
       </set>
     </attachedChunks>
   </component>
@@ -233,6 +239,7 @@
       <workItem from="1729682397353" duration="14551000" />
       <workItem from="1729921281800" duration="9078000" />
       <workItem from="1730195112878" duration="17000" />
+      <workItem from="1731080887008" duration="9929000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -290,7 +297,23 @@
       <option name="project" value="LOCAL" />
       <updated>1729923706006</updated>
     </task>
-    <option name="localTasksCounter" value="8" />
+    <task id="LOCAL-00008" summary="add check_spaces_style">
+      <option name="closed" value="true" />
+      <created>1731083660270</created>
+      <option name="number" value="00008" />
+      <option name="presentableId" value="LOCAL-00008" />
+      <option name="project" value="LOCAL" />
+      <updated>1731083660270</updated>
+    </task>
+    <task id="LOCAL-00009" summary="fix node.type">
+      <option name="closed" value="true" />
+      <created>1731147236426</created>
+      <option name="number" value="00009" />
+      <option name="presentableId" value="LOCAL-00009" />
+      <option name="project" value="LOCAL" />
+      <updated>1731147236426</updated>
+    </task>
+    <option name="localTasksCounter" value="10" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -305,11 +328,31 @@
     <MESSAGE value="add check_for_empty_lines" />
     <MESSAGE value="add config" />
     <MESSAGE value="start add check_spaces_style" />
-    <option name="LAST_COMMIT_MESSAGE" value="start add check_spaces_style" />
+    <MESSAGE value="add check_spaces_style" />
+    <MESSAGE value="fix node.type" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix node.type" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/tests/test_missing_semicolons.py</url>
+          <line>23</line>
+          <option name="timeStamp" value="20" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/checkers/missing_semicolons.py</url>
+          <line>42</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/jsLinter$Unittests_for_test_empty_lines_CheckEmptyLines_test_many_code_without_empty_lines.coverage" NAME="Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines Coverage Results" MODIFIED="1729695143502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/jsLinter$.coverage" NAME=" Coverage Results" MODIFIED="1729923565691" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/jsLinter$main.coverage" NAME="main Coverage Results" MODIFIED="1729929407439" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/jsLinter$.coverage" NAME=" Coverage Results" MODIFIED="1731149868615" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/jsLinter$Unittests_for__spaces_style_TestCheckSpacesStyle_test_missing_space_before_operator.coverage" NAME="Unittests for еуые_spaces_style.TestCheckSpacesStyle.test_missing_space_before_operator Coverage Results" MODIFIED="1731081453981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/jsLinter$Unittests_for_test_missing_semicolons_CheckMissingSemicolons_test_missing_semicolon_in_function.coverage" NAME="Unittests for test_missing_semicolons.CheckMissingSemicolons.test_missing_semicolon_in_function Coverage Results" MODIFIED="1731149864389" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
+    <SUITE FILE_PATH="coverage/jsLinter$main.coverage" NAME="main Coverage Results" MODIFIED="1731149924840" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>
