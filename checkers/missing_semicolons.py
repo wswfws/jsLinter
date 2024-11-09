@@ -13,6 +13,7 @@ warnings = check_for_missing_semicolons(code)
 for warning in warnings:
     print(warning)
 """
+
 from self_types.js_code import JsCode, JsCodeWarning
 
 
@@ -31,6 +32,8 @@ def check_for_missing_semicolons(js_code: JsCode) -> list[JsCodeWarning]:
         for node in body:
             if node.type == "FunctionDeclaration":
                 check(node.body.body)
+                continue
+            if node.type in ('IfStatement', 'ForStatement', 'WhileStatement'):
                 continue
             last_symbol = js_code.line_code[node.loc.end.line - 1][node.loc.end.column - 1]
             if last_symbol != ";":
