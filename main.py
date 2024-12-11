@@ -2,6 +2,7 @@
 Тут всё будет переписано
 """
 
+import argparse
 import esprima
 from yaml import load as load_yaml, FullLoader
 
@@ -74,6 +75,38 @@ class SimpleJSLinter:
                 print(warning)
 
 
+def parse_arguments(args: str) -> Dict[str, Any]:
+    parser = argparse.ArgumentParser(description="JavaScript Linter")
+    parser.add_argument('--file', type=str, default="test1.js", help="Path to the JavaScript file to lint")
+    parser.add_argument('--config', type=str, default=CONFIG_PATH, help=f"Path to the configuration file (default: {CONFIG_PATH})")
+    return parser.parse_args(args)
+
+
+def main():
+    args = parse_arguments(sys.argv[1:])
+    
+    try:
+        with open(args.config, 'r', encoding=CONFIG_ENCODING) as f:
+            config = load_yaml(f, Loader=FullLoader)
+
+        with open(args.file, 'r', encoding=CONFIG_ENCODING) as f:
+            code = JsCode(f.read())
+        
+        linter = SimpleJSLinter(code)
+        linter.lint(**config)
+        linter.report()
+        
+    except FileNotFoundError as e:
+        logger.error(f"File not found: {e}")
+    except json.JSONDecodeError as e:
+        logger.error(f"Invalid JSON in configuration file: {e}")
+    except Exception as e:
+        logger.exception(f"An unexpected error occurred: {e}")
+
+if __name__ == "__main__":
+    main() 
+  
+""" 
 with open(CONFIG_PATH, 'r', encoding=CONFIG_ENCODING) as f:
     config = load_yaml(f, Loader=FullLoader)
 
@@ -83,3 +116,4 @@ with open("test1.js", 'r', encoding=CONFIG_ENCODING) as f:
 linter = SimpleJSLinter(code1)
 linter.lint(**config)
 linter.report()
+"""
