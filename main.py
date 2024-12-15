@@ -5,6 +5,7 @@
 import argparse
 import json
 import logging
+import os
 import sys
 
 import esprima
@@ -79,12 +80,23 @@ class SimpleJSLinter:
                 print(warning)
 
 
-def parse_arguments(args: str) -> dict[str, any]:
+def parse_arguments(args: str):
     parser = argparse.ArgumentParser(description="JavaScript Linter")
-    parser.add_argument('--file', type=str, help="Path to the JavaScript file to lint")
+    parser.add_argument('--files', nargs='+', help="Paths to JavaScript files to lint")
+    parser.add_argument('--directories', nargs='+', help="Directories containing JavaScript files to lint")
     parser.add_argument('--config', type=str, default=CONFIG_PATH,
                         help=f"Path to the configuration file (default: {CONFIG_PATH})")
     return parser.parse_args(args)
+
+
+def get_files_from_directories(directories):
+    js_files = []
+    for directory in directories:
+        for root, _, files in os.walk(directory):
+            for file in files:
+                if file.endswith('.js'):
+                    js_files.append(os.path.join(root, file))
+    return js_files
 
 
 logger = logging.getLogger(__name__)
@@ -93,23 +105,35 @@ logger = logging.getLogger(__name__)
 def main():
     args = parse_arguments(sys.argv[1:])
 
-    if args.file is None:
-        logger.error(f"File name not found, type -h to see usage")
+    if not args.files and not args.directories:
+        logger.error("No files or directories specified, type -h to see usage")
         return
 
     try:
         with open(args.config, 'r', encoding=CONFIG_ENCODING) as f:
             config = load_yaml(f, Loader=FullLoader)
 
-        with open(args.file, 'r', encoding=CONFIG_ENCODING) as f:
-            code = JsCode(f.read())
+        files_to_lint = args.files or []
 
-        linter = SimpleJSLinter(code)
-        linter.lint(**config)
-        linter.report()
+        if args.directories:
+            files_to_lint.extend(get_files_from_directories(args.directories))
+
+        for file_path in files_to_lint:
+            try:
+                with open(file_path, 'r', encoding=CONFIG_ENCODING) as f:
+                    code = JsCode(f.read(), file_path)
+
+                linter = SimpleJSLinter(code)
+                linter.lint(**config)
+                linter.report()
+
+            except FileNotFoundError as e:
+                logger.error(f"File not found: {file_path}")
+            except Exception as e:
+                logger.error(f"Error linting file {file_path}: {e}")
 
     except FileNotFoundError as e:
-        logger.error(f"File not found: {e}")
+        logger.error(f"Configuration file not found: {e}")
     except json.JSONDecodeError as e:
         logger.error(f"Invalid JSON in configuration file: {e}")
     except Exception as e:
@@ -119,14 +143,7 @@ def main():
 if __name__ == "__main__":
     main()
 
-""" 
-with open(CONFIG_PATH, 'r', encoding=CONFIG_ENCODING) as f:
-    config = load_yaml(f, Loader=FullLoader)
-
-with open("test1.js", 'r', encoding=CONFIG_ENCODING) as f:
-    code1 = JsCode(f.read())
-
-linter = SimpleJSLinter(code1)
-linter.lint(**config)
-linter.report()
+"""
+python ./main.py --directories ./
+python ./main.py --files .\\test2.js .\\test1.js
 """

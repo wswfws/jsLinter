@@ -31,8 +31,8 @@ class JsCode:
     def __post_init__(self):
         self.line_code = self.code.split("\n")
         self.errors = []
-        self.parsed_code = esprima.parseScript(self.code, tolerant=True, loc=True)
-        self.tokenize_code = esprima.tokenize(self.code, tolerant=True, loc=True)
+        self.parsed_code = esprima.parseScript(self.code, tolerant=False, loc=True)
+        self.tokenize_code = esprima.tokenize(self.code, tolerant=False, loc=True)
 
 
 class JsCodeError(Exception):

@@ -4,9 +4,11 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="ecc128b5-0f42-4d9b-b41b-ac9bb230a980" name="Changes" comment="update docstring">
+    <list default="true" id="ecc128b5-0f42-4d9b-b41b-ac9bb230a980" name="Changes" comment="fix">
+      <change afterPath="$PROJECT_DIR$/test2.js" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/self_types/js_code.py" beforeDir="false" afterPath="$PROJECT_DIR$/self_types/js_code.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -80,11 +82,11 @@
     "Python tests.Unittests for test_spaces_style.TestCheckSpacesStyle.test_missing_space_before_operator.executor": "Debug",
     "Python tests.Unittests for test_spaces_style.TestCheckSpacesStyle.test_multiple_issues_in_one_line.executor": "Debug",
     "Python tests.Unittests for еуые_spaces_style.TestCheckSpacesStyle.test_missing_space_before_operator.executor": "Run",
-    "Python.main.executor": "Debug",
+    "Python.main.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "console",
-    "last_opened_file_path": "C:/Users/gelli/PycharmProjects/jsLinter/self_types",
+    "last_opened_file_path": "C:/Users/gelli/PycharmProjects/jsLinter",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -97,8 +99,8 @@
 }]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
-      <recent name="C:\Users\gelli\PycharmProjects\jsLinter\self_types" />
       <recent name="C:\Users\gelli\PycharmProjects\jsLinter" />
+      <recent name="C:\Users\gelli\PycharmProjects\jsLinter\self_types" />
     </key>
   </component>
   <component name="RunManager" selected="Python.main">
@@ -249,7 +251,7 @@
       <workItem from="1729921281800" duration="9078000" />
       <workItem from="1730195112878" duration="17000" />
       <workItem from="1731080887008" duration="19345000" />
-      <workItem from="1734273632574" duration="511000" />
+      <workItem from="1734273632574" duration="1937000" />
     </task>
     <task id="LOCAL-00001" summary="start">
       <option name="closed" value="true" />
@@ -347,7 +349,15 @@
       <option name="project" value="LOCAL" />
       <updated>1731222062581</updated>
     </task>
-    <option name="localTasksCounter" value="13" />
+    <task id="LOCAL-00013" summary="fix">
+      <option name="closed" value="true" />
+      <created>1734274300265</created>
+      <option name="number" value="00013" />
+      <option name="presentableId" value="LOCAL-00013" />
+      <option name="project" value="LOCAL" />
+      <updated>1734274300265</updated>
+    </task>
+    <option name="localTasksCounter" value="14" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -377,7 +387,8 @@
     <MESSAGE value="fix node.type" />
     <MESSAGE value="update" />
     <MESSAGE value="update docstring" />
-    <option name="LAST_COMMIT_MESSAGE" value="update docstring" />
+    <MESSAGE value="fix" />
+    <option name="LAST_COMMIT_MESSAGE" value="fix" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -386,11 +397,6 @@
           <url>file://$PROJECT_DIR$/tests/test_spaces_style.py</url>
           <line>47</line>
           <option name="timeStamp" value="29" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
-          <url>file://$PROJECT_DIR$/main.py</url>
-          <line>91</line>
-          <option name="timeStamp" value="30" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>
@@ -401,7 +407,7 @@
     <SUITE FILE_PATH="coverage/jsLinter$Unittests_for_test_spaces_style_TestCheckSpacesStyle_test_missing_space_before_operator.coverage" NAME="Unittests for test_spaces_style.TestCheckSpacesStyle.test_missing_space_before_operator Coverage Results" MODIFIED="1731176146109" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/jsLinter$Unittests_for_test_empty_lines_CheckEmptyLines_test_many_code_without_empty_lines.coverage" NAME="Unittests for test_empty_lines.CheckEmptyLines.test_many_code_without_empty_lines Coverage Results" MODIFIED="1729695143502" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
     <SUITE FILE_PATH="coverage/jsLinter$Unittests_for__spaces_style_TestCheckSpacesStyle_test_missing_space_before_operator.coverage" NAME="Unittests for еуые_spaces_style.TestCheckSpacesStyle.test_missing_space_before_operator Coverage Results" MODIFIED="1731081453981" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
-    <SUITE FILE_PATH="coverage/jsLinter$main.coverage" NAME="main Coverage Results" MODIFIED="1734274049343" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/jsLinter$main.coverage" NAME="main Coverage Results" MODIFIED="1734275459199" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/jsLinter$Doctests_in_public_props.coverage" NAME="Doctests in public_props Coverage Results" MODIFIED="1734274043549" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/jsLinter$.coverage" NAME=" Coverage Results" MODIFIED="1731179298861" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/tests" />
   </component>
