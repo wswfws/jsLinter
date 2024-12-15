@@ -3,6 +3,10 @@
 """
 
 import argparse
+import json
+import logging
+import sys
+
 import esprima
 from yaml import load as load_yaml, FullLoader
 
@@ -75,27 +79,35 @@ class SimpleJSLinter:
                 print(warning)
 
 
-def parse_arguments(args: str) -> Dict[str, Any]:
+def parse_arguments(args: str) -> dict[str, any]:
     parser = argparse.ArgumentParser(description="JavaScript Linter")
-    parser.add_argument('--file', type=str, default="test1.js", help="Path to the JavaScript file to lint")
-    parser.add_argument('--config', type=str, default=CONFIG_PATH, help=f"Path to the configuration file (default: {CONFIG_PATH})")
+    parser.add_argument('--file', type=str, help="Path to the JavaScript file to lint")
+    parser.add_argument('--config', type=str, default=CONFIG_PATH,
+                        help=f"Path to the configuration file (default: {CONFIG_PATH})")
     return parser.parse_args(args)
+
+
+logger = logging.getLogger(__name__)
 
 
 def main():
     args = parse_arguments(sys.argv[1:])
-    
+
+    if args.file is None:
+        logger.error(f"File name not found, type -h to see usage")
+        return
+
     try:
         with open(args.config, 'r', encoding=CONFIG_ENCODING) as f:
             config = load_yaml(f, Loader=FullLoader)
 
         with open(args.file, 'r', encoding=CONFIG_ENCODING) as f:
             code = JsCode(f.read())
-        
+
         linter = SimpleJSLinter(code)
         linter.lint(**config)
         linter.report()
-        
+
     except FileNotFoundError as e:
         logger.error(f"File not found: {e}")
     except json.JSONDecodeError as e:
@@ -103,9 +115,10 @@ def main():
     except Exception as e:
         logger.exception(f"An unexpected error occurred: {e}")
 
+
 if __name__ == "__main__":
-    main() 
-  
+    main()
+
 """ 
 with open(CONFIG_PATH, 'r', encoding=CONFIG_ENCODING) as f:
     config = load_yaml(f, Loader=FullLoader)
