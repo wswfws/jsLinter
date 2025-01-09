@@ -47,7 +47,6 @@ class CheckCorrectNaming(unittest.TestCase):
             class badClass {}
         """)
         warnings = check_for_correct_naming(code, self.config)
-        print(warnings)
         self.assertEqual(len(warnings), 3)
         self.assertIn("shouldn't use Var", str(warnings[0]))
         self.assertIn("BadFunc not in pattern", str(warnings[1]))
