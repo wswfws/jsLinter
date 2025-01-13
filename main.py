@@ -14,6 +14,7 @@ from yaml import load as load_yaml, FullLoader
 from checkers.correct_naming import check_for_correct_naming
 from checkers.empty_lines import check_for_empty_lines
 from checkers.missing_semicolons import check_for_missing_semicolons
+from checkers.nesting_level import check_for_nesting_level
 from checkers.spaces_style import check_spaces_style
 from config import CONFIG_PATH, CONFIG_ENCODING
 from self_types.js_code import JsCode, JsCodeError, JsCodeWarning
@@ -65,6 +66,11 @@ class SimpleJSLinter:
                 self.warnings.extend(check_for_correct_naming(
                     self.js_code,
                     kwargs.get("naming-patterns", {})
+                ))
+            if check_all or checkers.get("correct_nesting_level"):
+                self.warnings.extend(check_for_nesting_level(
+                    self.js_code,
+                    kwargs.get("max-nesting-level", 5)
                 ))
         except esprima.Error as e:
             print(f"Parsing error: {e.message}")

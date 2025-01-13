@@ -14,3 +14,5 @@ naming-patterns:
   js-const-variable-pattern: "[A-Z][A-Z-]*"
   js-function-pattern: "[a-z][A-Za-z-]*"
   js-class-pattern: "[A-Z][A-Za-z]*"
+
+max-nesting-level: 5
